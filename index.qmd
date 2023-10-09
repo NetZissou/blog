@@ -1,11 +1,36 @@
 ---
-title: "blog"
+title: "Net Zhang"
+image: profile_img.png
+toc: false
+about: 
+  template: broadside
+  image-shape: round
+  image-width: 20em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/net-zhang/
+    - text: Twitter
+      href: https://twitter.com/NetZissou
+    - text: GitHub
+      href: https://github.com/netzissou
 ---
 
-This is a Quarto website.
+# Welcome
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<-- This is Net. Net's profession is working with data, and he has been an R enthusiast for a long time. He is a firm believer in continuous learning. Net also believes that **relationships** are the keys to everything in his life.
 
-```{r}
-1 + 1
-```
+Aside from work, Net enjoys playing guitar, exploring blues, funk, jazz, folk, world music, and world cinema. He is a non-competitive trail runner. Salomon and Saucony are his brands of choice, but he plans to try some HOKA soon. 
+
+# Education
+
+**BS in Computational Data Analytics** (2022) The Ohio State University
+
+# Experience
+
+**Data Scientist** (2022 - present) [The Ohio State University College of Public Health](https://cph.osu.edu/) / [Translational Data Analytics Institute](https://tdai.osu.edu/)
+
+**Commercial Lines Pricing Analyst** (2022) [Progressive Insurance](https://www.progressivecommercial.com/)
+
+**Corporate Advanced Analyst** (2021 - 2022) [Worthington Industries](https://www.worthingtonindustries.com/)
+
+**Undergraduate Research Developer** (2020-2021) [Battelle Center for Science, Engineering and Public Policy](https://battellecenter.osu.edu/)
