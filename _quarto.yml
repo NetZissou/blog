@@ -3,12 +3,17 @@ project:
   output-dir: docs
 
 website:
-  title: "blog"
-  navbar:
-    left:
+  navbar: 
+    title: "Net Zhang"
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
+      - posts.qmd
+  page-footer: 
+    background: light # or dark
+    left:
+      - "Copyright 2023, Net Zhang"
 
 format:
   html:
