@@ -1,0 +1,115 @@
+---
+title: "Learning Curves: Experenice vs Performance"
+description: "This post discuss how to use learning curves as a model diagnostic tool"
+author:
+  - name: Net Zhang
+    url: https://netzissou.github.io/blog/
+date: 10-31-2023
+categories: [R, ML, Learning Curves, Model Diagnostics] # self-defined categories
+image: cover.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+Typically, the x-axis represents the experience, which could be the number of training examples, the number of iterations, or the amount of time spent training, while the y-axis represents the performance, which could be accuracy, error rate, or another relevant metric.
+
+# Where should you typically look at? And how to adjust afterwards?
+
+## 1. Convergence
+
+-   **Definition**: Convergence refers to the point at which the performance of the model stabilizes, and additional training brings negligible improvement.
+-   **Where to Look**: Focus on whether the training and validation curves are leveling off and reaching a plateau.
+-   **Follow-up Actions**:
+    -   If the curves have not converged, consider increasing the number of training epochs or adjusting the learning rate.
+    -   If the curves have converged to a suboptimal performance, consider increasing model complexity or improving feature engineering.
+
+## 2. Consistency
+
+-   **Definition**: Consistency refers to the stability and reliability of the learning process over time.
+-   **Where to Look**: Look for erratic fluctuations or high variance in the learning curves.
+-   **Follow-up Actions**:
+    -   If the curves are inconsistent, try using a smaller learning rate, different optimization algorithms, or regularization techniques.
+    -   Ensure that the data is properly preprocessed and that the model is not too sensitive to the initialization.
+
+## 3. Gap Between Training and Validation Curves
+
+-   **Definition**: The gap between the training and validation curves indicates the level of overfitting or underfitting.
+-   **Where to Look**: Focus on the final gap between the curves once they have converged.
+-   **Follow-up Actions**:
+    -   A large gap (with high training performance and low validation performance) indicates overfitting. To address this, you can add more data, simplify the model, or increase regularization.
+    -   A small gap with poor performance on both sets indicates underfitting. In this case, consider increasing model complexity, reducing regularization, or improving feature engineering.
+
+## 4. Rate of Learning
+
+-   **Definition**: The rate at which the performance improves over time.
+-   **Where to Look**: Look at the slope of the learning curves during training.
+-   **Follow-up Actions**:
+    -   A slow rate of learning might indicate a small learning rate or poor feature scaling. Consider adjusting the learning rate or preprocessing the features.
+    -   A fast rate of learning that suddenly plateaus might indicate that the model has quickly found a local minimum. Experiment with different initialization methods or learning rates.
+
+## 5. Final Performance Level
+
+-   **Definition**: The level of performance that the model has achieved after training.
+-   **Where to Look**: Look at the final value of the validation curve.
+-   **Follow-up Actions**:
+    -   If the final performance is not satisfactory, consider revisiting the model selection, feature engineering, or other aspects of the training process.
+
+# Summary of the Main Diagnostic Categories
+
+## 1. High Bias (Underfitting)
+
+-   **Diagnosis**: The learning curves for both the training and validation sets plateau at a low level of performance.
+-   **Follow-up Actions**:
+    -   Increase model complexity (e.g., use a more complex model, add polynomial features).
+    -   Decrease regularization.
+    -   Increase the number of features or improve feature selection.
+    -   Train for a longer time if the model has not yet converged.
+
+## 2. High Variance (Overfitting)
+
+-   **Diagnosis**: The training curve shows high performance, but the validation curve plateaus at a significantly lower level of performance.
+-   **Follow-up Actions**:
+    -   Increase the amount of training data.
+    -   Decrease model complexity (e.g., use a simpler model, reduce the number of features).
+    -   Increase regularization.
+    -   Improve data quality (e.g., remove noisy examples, correct mislabelings).
+    -   Implement data augmentation (if applicable).
+
+## 3. Good Fit
+
+-   **Diagnosis**: The learning curves for both training and validation sets plateau at a high level of performance, and the gap between them is small.
+-   **Follow-up Actions**:
+    -   Consider further tuning hyperparameters to see if performance can be slightly improved.
+    -   Explore ensemble methods to potentially boost performance.
+    -   Deploy the model, but continue to monitor its performance on new data.
+
+## 4. Overtraining
+
+-   **Diagnosis**: Initially, both training and validation performance improve, but after a certain point, the validation performance starts to degrade while training performance continues to improve.
+-   **Follow-up Actions**:
+    -   Implement early stopping to halt training when validation performance begins to degrade.
+    -   Increase regularization.
+    -   Reduce the learning rate.
+
+## 5. Insufficient Training
+
+-   **Diagnosis**: The learning curves show steady improvement, but they have not yet plateaued, indicating that the model could benefit from further training.
+-   **Follow-up Actions**:
+    -   Continue training for more epochs or iterations.
+    -   Ensure that the learning rate is not set too low, which could slow down training.
+
+## 6. Learning Rate Issues
+
+-   **Diagnosis**:
+    -   If the learning curve is very erratic, the learning rate might be too high.
+    -   If the learning curve shows very slow improvement, the learning rate might be too low.
+-   **Follow-up Actions**:
+    -   Adjust the learning rate accordingly.
+    -   Implement learning rate scheduling to decrease the learning rate over time.
+
+## 7. Data Quality Issues
+
+-   **Diagnosis**: The learning curves do not show improvement, or the validation performance is significantly lower than training performance.
+-   **Follow-up Actions**:
+    -   Clean the dataset to remove noisy examples and outliers.
+    -   Check for and correct any mislabeled examples.
+    -   Ensure that the features are appropriately scaled and encoded.

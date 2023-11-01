@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-10">
-<meta name="description" content="Net Zhang’s Resume">
+<meta name="author" content="Net Zhang">
+<meta name="dcterms.date" content="2023-10-31">
+<meta name="description" content="This post discuss how to use learning curves as a model diagnostic tool">
 
-<title>Resume</title>
+<title>Learning Curves: Experenice vs Performance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -65,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -75,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Net Zhang</span>
     </a>
   </div>
@@ -86,15 +87,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html" rel="" target="">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./resume.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
@@ -106,121 +107,237 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Learning Curves: Experenice vs Performance</h1>
+                  <div>
+        <div class="description">
+          This post discuss how to use learning curves as a model diagnostic tool
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">ML</div>
+                <div class="quarto-category">Learning Curves</div>
+                <div class="quarto-category">Model Diagnostics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://netzissou.github.io/blog/">Net Zhang</a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 31, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#where-should-you-typically-look-at-and-how-to-adjust-afterwards" id="toc-where-should-you-typically-look-at-and-how-to-adjust-afterwards" class="nav-link active" data-scroll-target="#where-should-you-typically-look-at-and-how-to-adjust-afterwards">Where should you typically look at? And how to adjust afterwards?</a>
+  <ul class="collapse">
+  <li><a href="#convergence" id="toc-convergence" class="nav-link" data-scroll-target="#convergence">1. Convergence</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency">2. Consistency</a></li>
+  <li><a href="#gap-between-training-and-validation-curves" id="toc-gap-between-training-and-validation-curves" class="nav-link" data-scroll-target="#gap-between-training-and-validation-curves">3. Gap Between Training and Validation Curves</a></li>
+  <li><a href="#rate-of-learning" id="toc-rate-of-learning" class="nav-link" data-scroll-target="#rate-of-learning">4. Rate of Learning</a></li>
+  <li><a href="#final-performance-level" id="toc-final-performance-level" class="nav-link" data-scroll-target="#final-performance-level">5. Final Performance Level</a></li>
+  </ul></li>
+  <li><a href="#summary-of-the-main-diagnostic-categories" id="toc-summary-of-the-main-diagnostic-categories" class="nav-link" data-scroll-target="#summary-of-the-main-diagnostic-categories">Summary of the Main Diagnostic Categories</a>
+  <ul class="collapse">
+  <li><a href="#high-bias-underfitting" id="toc-high-bias-underfitting" class="nav-link" data-scroll-target="#high-bias-underfitting">1. High Bias (Underfitting)</a></li>
+  <li><a href="#high-variance-overfitting" id="toc-high-variance-overfitting" class="nav-link" data-scroll-target="#high-variance-overfitting">2. High Variance (Overfitting)</a></li>
+  <li><a href="#good-fit" id="toc-good-fit" class="nav-link" data-scroll-target="#good-fit">3. Good Fit</a></li>
+  <li><a href="#overtraining" id="toc-overtraining" class="nav-link" data-scroll-target="#overtraining">4. Overtraining</a></li>
+  <li><a href="#insufficient-training" id="toc-insufficient-training" class="nav-link" data-scroll-target="#insufficient-training">5. Insufficient Training</a></li>
+  <li><a href="#learning-rate-issues" id="toc-learning-rate-issues" class="nav-link" data-scroll-target="#learning-rate-issues">6. Learning Rate Issues</a></li>
+  <li><a href="#data-quality-issues" id="toc-data-quality-issues" class="nav-link" data-scroll-target="#data-quality-issues">7. Data Quality Issues</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Resume</h1>
-</div>
-
-<div>
-  <div class="description">
-    Net Zhang’s Resume
-  </div>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Last Updated</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="cell">
-<style type="text/css">
-#title-block-header .description {
-    display: none;
-}
-</style>
-</div>
-<div class="cell">
-<style type="text/css">
-.embed-container {
-    position: relative;
-    padding-bottom: 129%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-</style>
-</div>
-<p class="text-center">
-  <a class="btn btn-primary btn-lg cv-download" href="Net_Zhang_20231010.pdf" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i> Download Current Resume
-  </a>
-</p>
-
-<div class="embed-container">
-  <iframe src="Net_Zhang_20231010.pdf" style="border: 0.5px"></iframe>
-</div>
-<p>
-<script type="application/shiny-prerendered" data-context="server-extras">
-ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
-  quos <- rlang::enquos(...)
-  vars <- rlang::list2(...)
-  nm <- names(vars)
-  if (is.null(nm)) {
-    nm <- rep_len("", length(vars))
-  }
-  mapply(function(q, nm, val) {
-    # Infer name, if possible
-    if (nm == "") {
-      tryCatch({
-        nm <- rlang::as_name(q)
-      }, error = function(e) {
-        code <- paste(collapse = "\n", deparse(rlang::f_rhs(q)))
-        stop("ojs_define() could not create a name for the argument: ", code)
-      })
-    }
-    .session$output[[nm]] <- val
-    outputOptions(.session$output, nm, suspendWhenHidden = FALSE)
-    .session$sendCustomMessage("ojs-export", list(name = nm))
-    NULL
-  }, quos, nm, vars, SIMPLIFY = FALSE, USE.NAMES = FALSE)
-  invisible()
-}
-</script>
-</p>
-<!--html_preserve-->
-<script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[]}
-</script>
-<!--/html_preserve-->
-<!--html_preserve-->
-
-<script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]}},"value":[{"type":"character","attributes":{},"value":["base","cli","compiler","datasets","digest","ellipsis","evaluate","fastmap","graphics","grDevices","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","lifecycle","magrittr","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","rstudioapi","shiny","stats","tools","utils","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.3.1","3.6.1","4.3.1","4.3.1","0.6.33","0.3.2","0.22","1.1.1","4.3.1","4.3.1","0.5.6.1","1.6.2","1.6.11","1.8.7","1.44","1.3.1","1.0.3","2.0.3","4.3.1","0.12","1.2.1","2.5.1","1.0.11","1.1.1","2.25","0.15.0","1.7.5","4.3.1","4.3.1","4.3.1","0.40","1.8-4","2.3.7"]}]}]}
-</script>
-<!--/html_preserve-->
 
 
+<p>Typically, the x-axis represents the experience, which could be the number of training examples, the number of iterations, or the amount of time spent training, while the y-axis represents the performance, which could be accuracy, error rate, or another relevant metric.</p>
+<section id="where-should-you-typically-look-at-and-how-to-adjust-afterwards" class="level1">
+<h1>Where should you typically look at? And how to adjust afterwards?</h1>
+<section id="convergence" class="level2">
+<h2 class="anchored" data-anchor-id="convergence">1. Convergence</h2>
+<ul>
+<li><strong>Definition</strong>: Convergence refers to the point at which the performance of the model stabilizes, and additional training brings negligible improvement.</li>
+<li><strong>Where to Look</strong>: Focus on whether the training and validation curves are leveling off and reaching a plateau.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>If the curves have not converged, consider increasing the number of training epochs or adjusting the learning rate.</li>
+<li>If the curves have converged to a suboptimal performance, consider increasing model complexity or improving feature engineering.</li>
+</ul></li>
+</ul>
+</section>
+<section id="consistency" class="level2">
+<h2 class="anchored" data-anchor-id="consistency">2. Consistency</h2>
+<ul>
+<li><strong>Definition</strong>: Consistency refers to the stability and reliability of the learning process over time.</li>
+<li><strong>Where to Look</strong>: Look for erratic fluctuations or high variance in the learning curves.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>If the curves are inconsistent, try using a smaller learning rate, different optimization algorithms, or regularization techniques.</li>
+<li>Ensure that the data is properly preprocessed and that the model is not too sensitive to the initialization.</li>
+</ul></li>
+</ul>
+</section>
+<section id="gap-between-training-and-validation-curves" class="level2">
+<h2 class="anchored" data-anchor-id="gap-between-training-and-validation-curves">3. Gap Between Training and Validation Curves</h2>
+<ul>
+<li><strong>Definition</strong>: The gap between the training and validation curves indicates the level of overfitting or underfitting.</li>
+<li><strong>Where to Look</strong>: Focus on the final gap between the curves once they have converged.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>A large gap (with high training performance and low validation performance) indicates overfitting. To address this, you can add more data, simplify the model, or increase regularization.</li>
+<li>A small gap with poor performance on both sets indicates underfitting. In this case, consider increasing model complexity, reducing regularization, or improving feature engineering.</li>
+</ul></li>
+</ul>
+</section>
+<section id="rate-of-learning" class="level2">
+<h2 class="anchored" data-anchor-id="rate-of-learning">4. Rate of Learning</h2>
+<ul>
+<li><strong>Definition</strong>: The rate at which the performance improves over time.</li>
+<li><strong>Where to Look</strong>: Look at the slope of the learning curves during training.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>A slow rate of learning might indicate a small learning rate or poor feature scaling. Consider adjusting the learning rate or preprocessing the features.</li>
+<li>A fast rate of learning that suddenly plateaus might indicate that the model has quickly found a local minimum. Experiment with different initialization methods or learning rates.</li>
+</ul></li>
+</ul>
+</section>
+<section id="final-performance-level" class="level2">
+<h2 class="anchored" data-anchor-id="final-performance-level">5. Final Performance Level</h2>
+<ul>
+<li><strong>Definition</strong>: The level of performance that the model has achieved after training.</li>
+<li><strong>Where to Look</strong>: Look at the final value of the validation curve.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>If the final performance is not satisfactory, consider revisiting the model selection, feature engineering, or other aspects of the training process.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="summary-of-the-main-diagnostic-categories" class="level1">
+<h1>Summary of the Main Diagnostic Categories</h1>
+<section id="high-bias-underfitting" class="level2">
+<h2 class="anchored" data-anchor-id="high-bias-underfitting">1. High Bias (Underfitting)</h2>
+<ul>
+<li><strong>Diagnosis</strong>: The learning curves for both the training and validation sets plateau at a low level of performance.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Increase model complexity (e.g., use a more complex model, add polynomial features).</li>
+<li>Decrease regularization.</li>
+<li>Increase the number of features or improve feature selection.</li>
+<li>Train for a longer time if the model has not yet converged.</li>
+</ul></li>
+</ul>
+</section>
+<section id="high-variance-overfitting" class="level2">
+<h2 class="anchored" data-anchor-id="high-variance-overfitting">2. High Variance (Overfitting)</h2>
+<ul>
+<li><strong>Diagnosis</strong>: The training curve shows high performance, but the validation curve plateaus at a significantly lower level of performance.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Increase the amount of training data.</li>
+<li>Decrease model complexity (e.g., use a simpler model, reduce the number of features).</li>
+<li>Increase regularization.</li>
+<li>Improve data quality (e.g., remove noisy examples, correct mislabelings).</li>
+<li>Implement data augmentation (if applicable).</li>
+</ul></li>
+</ul>
+</section>
+<section id="good-fit" class="level2">
+<h2 class="anchored" data-anchor-id="good-fit">3. Good Fit</h2>
+<ul>
+<li><strong>Diagnosis</strong>: The learning curves for both training and validation sets plateau at a high level of performance, and the gap between them is small.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Consider further tuning hyperparameters to see if performance can be slightly improved.</li>
+<li>Explore ensemble methods to potentially boost performance.</li>
+<li>Deploy the model, but continue to monitor its performance on new data.</li>
+</ul></li>
+</ul>
+</section>
+<section id="overtraining" class="level2">
+<h2 class="anchored" data-anchor-id="overtraining">4. Overtraining</h2>
+<ul>
+<li><strong>Diagnosis</strong>: Initially, both training and validation performance improve, but after a certain point, the validation performance starts to degrade while training performance continues to improve.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Implement early stopping to halt training when validation performance begins to degrade.</li>
+<li>Increase regularization.</li>
+<li>Reduce the learning rate.</li>
+</ul></li>
+</ul>
+</section>
+<section id="insufficient-training" class="level2">
+<h2 class="anchored" data-anchor-id="insufficient-training">5. Insufficient Training</h2>
+<ul>
+<li><strong>Diagnosis</strong>: The learning curves show steady improvement, but they have not yet plateaued, indicating that the model could benefit from further training.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Continue training for more epochs or iterations.</li>
+<li>Ensure that the learning rate is not set too low, which could slow down training.</li>
+</ul></li>
+</ul>
+</section>
+<section id="learning-rate-issues" class="level2">
+<h2 class="anchored" data-anchor-id="learning-rate-issues">6. Learning Rate Issues</h2>
+<ul>
+<li><strong>Diagnosis</strong>:
+<ul>
+<li>If the learning curve is very erratic, the learning rate might be too high.</li>
+<li>If the learning curve shows very slow improvement, the learning rate might be too low.</li>
+</ul></li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Adjust the learning rate accordingly.</li>
+<li>Implement learning rate scheduling to decrease the learning rate over time.</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-quality-issues" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality-issues">7. Data Quality Issues</h2>
+<ul>
+<li><strong>Diagnosis</strong>: The learning curves do not show improvement, or the validation performance is significantly lower than training performance.</li>
+<li><strong>Follow-up Actions</strong>:
+<ul>
+<li>Clean the dataset to remove noisy examples and outliers.</li>
+<li>Check for and correct any mislabeled examples.</li>
+<li>Ensure that the features are appropriately scaled and encoded.</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

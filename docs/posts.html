@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blogs</title>
+<title>“Blog”</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blogs</span></a>
+ <span class="menu-text">"Blog"</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resume.html" rel="" target="">
@@ -142,13 +142,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Learning Curves">Learning Curves <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ML">ML <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Model Diagnostics">Model Diagnostics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blogs</h1>
+<h1 class="title">“Blog”</h1>
 </div>
 
 
@@ -163,13 +163,89 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>This blog is inspired by the concept of out-of-core learning, which refers to the ability to learn from data that <strong>cannot fit into a computer’s memory (RAM) at once</strong>. While <strong>building indexes</strong>, which is similar to creating shortcuts or directories for quick access to information, the computer can access specific pieces of information.</p>
+<p>Comparing this concept to human learning, where the brain is considered the RAM, I’d like to be better at how to <strong>ask good questions</strong> on interesting topics. These questions will essentially be queries to the Large Language Models such as OpenAI’s GPT 4.0, and I’ll use them as my mental indexes.</p>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="R,ML,Learning Curves,Model Diagnostics" data-listing-date-sort="1698724800000" data-listing-file-modified-sort="1698852381640" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<a href="./posts/2023-10-31-learning_curves/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2023-10-31-learning_curves/cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Learning Curves: Experenice vs Performance
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ML'); return false;">
+ML
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Learning Curves'); return false;">
+Learning Curves
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Model Diagnostics'); return false;">
+Model Diagnostics
+</div>
+</div>
+<div class="card-text listing-description">
+This post discuss how to use learning curves as a model diagnostic tool
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Net Zhang
+</div>
+<div class="listing-date">
+Oct 31, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="R,ML,Model Diagnostics" data-listing-date-sort="1698724800000" data-listing-file-modified-sort="1698852392126" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<a href="./posts/2023-10-31-model_diagnostics/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2023-10-31-model_diagnostics/cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Model Diagnostics
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ML'); return false;">
+ML
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Model Diagnostics'); return false;">
+Model Diagnostics
+</div>
+</div>
+<div class="card-text listing-description">
+You built a model. Now what?
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Net Zhang
+</div>
+<div class="listing-date">
+Oct 31, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

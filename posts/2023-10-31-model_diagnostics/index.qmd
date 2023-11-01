@@ -1,0 +1,70 @@
+---
+title: "Model Diagnostics"
+description: "You built a model. Now what?"
+author:
+  - name: Net Zhang
+    url: https://netzissou.github.io/blog/
+date: 10-31-2023
+categories: [R, ML, Model Diagnostics] # self-defined categories
+image: cover.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+# Rants...
+
+I am at a point where whenever someone mentions modeling, I always get goosebumps for some reason. And when they start saying "You know, data is the new gold!", it's just too much for me. Here's my hot take: all jobs are data analyst job and all scientific disciplines are data science.
+
+The massive hype surrounding quantitative methods often undermines my satirical take on modeling. I think that models are essentially a collection of assumptions and abstractions, constructed to simplify and represent complex real-world phenomena.No matter how "great" your "model" is, we are still in the information business fellas. Someone will have to adjust to make the model works.
+
+# Model diagnostics
+
+This post will list out some Model diagnostics categories which I will use for future references.
+
+## 1. Model Fit:
+
+-   **Goodness of Fit**: Assess how well the model's predictions match the observed data. For regression models, this might involve R², adjusted R², or residual plots. For classification models, you might use accuracy, precision, recall, or ROC curves.
+-   **Residual Analysis**: Analyze the residuals (the difference between observed and predicted values) to check for patterns, heteroscedasticity (non-constant variance), and normality. Tools include residual plots, QQ-plots, and statistical tests.
+
+## 2. Model Performance:
+
+-   **Cross-Validation**: Use techniques like k-fold cross-validation to assess how well the model is likely to perform on unseen data.
+-   **Performance Metrics**: Depending on the type of model (e.g., regression, classification), use appropriate metrics like Mean Squared Error (MSE), accuracy, F1 score, AUC-ROC, etc.
+
+## 3. Overfitting and Underfitting:
+
+-   **Learning Curves**: Plot training and validation error over time or against model complexity to diagnose overfitting (high variance) or underfitting (high bias).
+-   **Regularization**: Apply techniques like L1 or L2 regularization and tune their parameters to prevent overfitting.
+
+## 4. Feature Relevance and Importance:
+
+-   **Variable Selection**: Use techniques like forward selection, backward elimination, or regularization paths to identify the most important features.
+-   **Importance Scores**: For tree-based models (e.g., random forests, gradient boosting), look at feature importance scores.
+
+## 5. Model Assumptions and Conditions:
+
+-   **Linearity**: For linear models, check that the relationship between predictors and the target is linear.
+-   **Independence**: Ensure that observations are independent of each other.
+-   **Homoscedasticity**: The variance of residuals should be constant across all levels of the independent variables.
+-   **Normality of Errors**: For certain types of models (e.g., linear regression), the residuals should be normally distributed.
+
+## 6. Outliers and Leverage Points:
+
+-   **Outlier Detection**: Identify and assess the impact of outliers on the model.
+-   **Influence Points**: Use measures like Cook's distance to identify points that have a disproportionate influence on the model fit.
+
+## 7. Model Complexity:
+
+-   **Simplicity vs. Complexity**: Balance the complexity of the model to ensure it captures the underlying patterns without being overly complex.
+-   **Dimensionality Reduction**: Apply techniques like PCA if the model is suffering from the curse of dimensionality.
+
+## 8. Comparison with Other Models:
+
+-   **Model Selection**: Compare the performance, interpretability, and complexity of different models to choose the best one.
+
+## 9. Interpretability and Explainability:
+
+-   **Model Explanation**: Use tools and techniques to explain the predictions of complex models, especially for high-stakes decisions.
+
+## 10. Validation on Different Data Subsets:
+
+-   **Stratified Sampling**: Ensure that the model performs well across different strata or subsets of the data.

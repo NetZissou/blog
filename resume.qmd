@@ -4,6 +4,7 @@ description: "Net Zhang's Resume"
 date: 2023-10-10
 published-title: Last Updated
 engine: knitr 
+server: shiny
 cv:
   pdf: "Net_Zhang_20231010.pdf"
 ---
@@ -45,3 +46,9 @@ cv:
   <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
 </div>
 ```
+
+
+
+
+
+

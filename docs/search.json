@@ -7,11 +7,179 @@
     "text": "Welcome\n&lt;– This is Net. Net’s profession is working with data, and he has been an R enthusiast for a long time. He is a firm believer in continuous learning. Net also believes that relationships are the keys to everything in his life.\nAside from work, Net enjoys playing guitar, exploring blues, funk, jazz, folk, world music, and world cinema. He is a non-competitive trail runner. Salomon and Saucony are his brands of choice, but he plans to try some HOKA soon.\n\n\nEducation\nBS in Computational Data Analytics (2022) The Ohio State University\n\n\nExperience\nData Scientist (2022 - present) The Ohio State University College of Public Health / Translational Data Analytics Institute\nCommercial Lines Pricing Analyst (2022) Progressive Insurance\nCorporate Advanced Analyst (2021 - 2022) Worthington Industries\nUndergraduate Research Developer (2020-2021) Battelle Center for Science, Engineering and Public Policy"
   },
   {
+    "objectID": "posts/2023-10-31-learning_curves/index.html",
+    "href": "posts/2023-10-31-learning_curves/index.html",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "",
+    "text": "Typically, the x-axis represents the experience, which could be the number of training examples, the number of iterations, or the amount of time spent training, while the y-axis represents the performance, which could be accuracy, error rate, or another relevant metric."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#convergence",
+    "href": "posts/2023-10-31-learning_curves/index.html#convergence",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "1. Convergence",
+    "text": "1. Convergence\n\nDefinition: Convergence refers to the point at which the performance of the model stabilizes, and additional training brings negligible improvement.\nWhere to Look: Focus on whether the training and validation curves are leveling off and reaching a plateau.\nFollow-up Actions:\n\nIf the curves have not converged, consider increasing the number of training epochs or adjusting the learning rate.\nIf the curves have converged to a suboptimal performance, consider increasing model complexity or improving feature engineering."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#consistency",
+    "href": "posts/2023-10-31-learning_curves/index.html#consistency",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "2. Consistency",
+    "text": "2. Consistency\n\nDefinition: Consistency refers to the stability and reliability of the learning process over time.\nWhere to Look: Look for erratic fluctuations or high variance in the learning curves.\nFollow-up Actions:\n\nIf the curves are inconsistent, try using a smaller learning rate, different optimization algorithms, or regularization techniques.\nEnsure that the data is properly preprocessed and that the model is not too sensitive to the initialization."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#gap-between-training-and-validation-curves",
+    "href": "posts/2023-10-31-learning_curves/index.html#gap-between-training-and-validation-curves",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "3. Gap Between Training and Validation Curves",
+    "text": "3. Gap Between Training and Validation Curves\n\nDefinition: The gap between the training and validation curves indicates the level of overfitting or underfitting.\nWhere to Look: Focus on the final gap between the curves once they have converged.\nFollow-up Actions:\n\nA large gap (with high training performance and low validation performance) indicates overfitting. To address this, you can add more data, simplify the model, or increase regularization.\nA small gap with poor performance on both sets indicates underfitting. In this case, consider increasing model complexity, reducing regularization, or improving feature engineering."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#rate-of-learning",
+    "href": "posts/2023-10-31-learning_curves/index.html#rate-of-learning",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "4. Rate of Learning",
+    "text": "4. Rate of Learning\n\nDefinition: The rate at which the performance improves over time.\nWhere to Look: Look at the slope of the learning curves during training.\nFollow-up Actions:\n\nA slow rate of learning might indicate a small learning rate or poor feature scaling. Consider adjusting the learning rate or preprocessing the features.\nA fast rate of learning that suddenly plateaus might indicate that the model has quickly found a local minimum. Experiment with different initialization methods or learning rates."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#final-performance-level",
+    "href": "posts/2023-10-31-learning_curves/index.html#final-performance-level",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "5. Final Performance Level",
+    "text": "5. Final Performance Level\n\nDefinition: The level of performance that the model has achieved after training.\nWhere to Look: Look at the final value of the validation curve.\nFollow-up Actions:\n\nIf the final performance is not satisfactory, consider revisiting the model selection, feature engineering, or other aspects of the training process."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#high-bias-underfitting",
+    "href": "posts/2023-10-31-learning_curves/index.html#high-bias-underfitting",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "1. High Bias (Underfitting)",
+    "text": "1. High Bias (Underfitting)\n\nDiagnosis: The learning curves for both the training and validation sets plateau at a low level of performance.\nFollow-up Actions:\n\nIncrease model complexity (e.g., use a more complex model, add polynomial features).\nDecrease regularization.\nIncrease the number of features or improve feature selection.\nTrain for a longer time if the model has not yet converged."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#high-variance-overfitting",
+    "href": "posts/2023-10-31-learning_curves/index.html#high-variance-overfitting",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "2. High Variance (Overfitting)",
+    "text": "2. High Variance (Overfitting)\n\nDiagnosis: The training curve shows high performance, but the validation curve plateaus at a significantly lower level of performance.\nFollow-up Actions:\n\nIncrease the amount of training data.\nDecrease model complexity (e.g., use a simpler model, reduce the number of features).\nIncrease regularization.\nImprove data quality (e.g., remove noisy examples, correct mislabelings).\nImplement data augmentation (if applicable)."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#good-fit",
+    "href": "posts/2023-10-31-learning_curves/index.html#good-fit",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "3. Good Fit",
+    "text": "3. Good Fit\n\nDiagnosis: The learning curves for both training and validation sets plateau at a high level of performance, and the gap between them is small.\nFollow-up Actions:\n\nConsider further tuning hyperparameters to see if performance can be slightly improved.\nExplore ensemble methods to potentially boost performance.\nDeploy the model, but continue to monitor its performance on new data."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#overtraining",
+    "href": "posts/2023-10-31-learning_curves/index.html#overtraining",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "4. Overtraining",
+    "text": "4. Overtraining\n\nDiagnosis: Initially, both training and validation performance improve, but after a certain point, the validation performance starts to degrade while training performance continues to improve.\nFollow-up Actions:\n\nImplement early stopping to halt training when validation performance begins to degrade.\nIncrease regularization.\nReduce the learning rate."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#insufficient-training",
+    "href": "posts/2023-10-31-learning_curves/index.html#insufficient-training",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "5. Insufficient Training",
+    "text": "5. Insufficient Training\n\nDiagnosis: The learning curves show steady improvement, but they have not yet plateaued, indicating that the model could benefit from further training.\nFollow-up Actions:\n\nContinue training for more epochs or iterations.\nEnsure that the learning rate is not set too low, which could slow down training."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#learning-rate-issues",
+    "href": "posts/2023-10-31-learning_curves/index.html#learning-rate-issues",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "6. Learning Rate Issues",
+    "text": "6. Learning Rate Issues\n\nDiagnosis:\n\nIf the learning curve is very erratic, the learning rate might be too high.\nIf the learning curve shows very slow improvement, the learning rate might be too low.\n\nFollow-up Actions:\n\nAdjust the learning rate accordingly.\nImplement learning rate scheduling to decrease the learning rate over time."
+  },
+  {
+    "objectID": "posts/2023-10-31-learning_curves/index.html#data-quality-issues",
+    "href": "posts/2023-10-31-learning_curves/index.html#data-quality-issues",
+    "title": "Learning Curves: Experenice vs Performance",
+    "section": "7. Data Quality Issues",
+    "text": "7. Data Quality Issues\n\nDiagnosis: The learning curves do not show improvement, or the validation performance is significantly lower than training performance.\nFollow-up Actions:\n\nClean the dataset to remove noisy examples and outliers.\nCheck for and correct any mislabeled examples.\nEnsure that the features are appropriately scaled and encoded."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html",
+    "href": "posts/2023-10-31-model_diagnostics/index.html",
+    "title": "Model Diagnostics",
+    "section": "",
+    "text": "I am at a point where whenever someone mentions modeling, I always get goosebumps for some reason. And when they start saying “You know, data is the new gold!”, it’s just too much for me. Here’s my hot take: all jobs are data analyst job and all scientific disciplines are data science.\nThe massive hype surrounding quantitative methods often undermines my satirical take on modeling. I think that models are essentially a collection of assumptions and abstractions, constructed to simplify and represent complex real-world phenomena.No matter how “great” your “model” is, we are still in the information business fellas. Someone will have to adjust to make the model works."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#model-fit",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#model-fit",
+    "title": "Model Diagnostics",
+    "section": "1. Model Fit:",
+    "text": "1. Model Fit:\n\nGoodness of Fit: Assess how well the model’s predictions match the observed data. For regression models, this might involve R², adjusted R², or residual plots. For classification models, you might use accuracy, precision, recall, or ROC curves.\nResidual Analysis: Analyze the residuals (the difference between observed and predicted values) to check for patterns, heteroscedasticity (non-constant variance), and normality. Tools include residual plots, QQ-plots, and statistical tests."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#model-performance",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#model-performance",
+    "title": "Model Diagnostics",
+    "section": "2. Model Performance:",
+    "text": "2. Model Performance:\n\nCross-Validation: Use techniques like k-fold cross-validation to assess how well the model is likely to perform on unseen data.\nPerformance Metrics: Depending on the type of model (e.g., regression, classification), use appropriate metrics like Mean Squared Error (MSE), accuracy, F1 score, AUC-ROC, etc."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#overfitting-and-underfitting",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#overfitting-and-underfitting",
+    "title": "Model Diagnostics",
+    "section": "3. Overfitting and Underfitting:",
+    "text": "3. Overfitting and Underfitting:\n\nLearning Curves: Plot training and validation error over time or against model complexity to diagnose overfitting (high variance) or underfitting (high bias).\nRegularization: Apply techniques like L1 or L2 regularization and tune their parameters to prevent overfitting."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#feature-relevance-and-importance",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#feature-relevance-and-importance",
+    "title": "Model Diagnostics",
+    "section": "4. Feature Relevance and Importance:",
+    "text": "4. Feature Relevance and Importance:\n\nVariable Selection: Use techniques like forward selection, backward elimination, or regularization paths to identify the most important features.\nImportance Scores: For tree-based models (e.g., random forests, gradient boosting), look at feature importance scores."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#model-assumptions-and-conditions",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#model-assumptions-and-conditions",
+    "title": "Model Diagnostics",
+    "section": "5. Model Assumptions and Conditions:",
+    "text": "5. Model Assumptions and Conditions:\n\nLinearity: For linear models, check that the relationship between predictors and the target is linear.\nIndependence: Ensure that observations are independent of each other.\nHomoscedasticity: The variance of residuals should be constant across all levels of the independent variables.\nNormality of Errors: For certain types of models (e.g., linear regression), the residuals should be normally distributed."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#outliers-and-leverage-points",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#outliers-and-leverage-points",
+    "title": "Model Diagnostics",
+    "section": "6. Outliers and Leverage Points:",
+    "text": "6. Outliers and Leverage Points:\n\nOutlier Detection: Identify and assess the impact of outliers on the model.\nInfluence Points: Use measures like Cook’s distance to identify points that have a disproportionate influence on the model fit."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#model-complexity",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#model-complexity",
+    "title": "Model Diagnostics",
+    "section": "7. Model Complexity:",
+    "text": "7. Model Complexity:\n\nSimplicity vs. Complexity: Balance the complexity of the model to ensure it captures the underlying patterns without being overly complex.\nDimensionality Reduction: Apply techniques like PCA if the model is suffering from the curse of dimensionality."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#comparison-with-other-models",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#comparison-with-other-models",
+    "title": "Model Diagnostics",
+    "section": "8. Comparison with Other Models:",
+    "text": "8. Comparison with Other Models:\n\nModel Selection: Compare the performance, interpretability, and complexity of different models to choose the best one."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#interpretability-and-explainability",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#interpretability-and-explainability",
+    "title": "Model Diagnostics",
+    "section": "9. Interpretability and Explainability:",
+    "text": "9. Interpretability and Explainability:\n\nModel Explanation: Use tools and techniques to explain the predictions of complex models, especially for high-stakes decisions."
+  },
+  {
+    "objectID": "posts/2023-10-31-model_diagnostics/index.html#validation-on-different-data-subsets",
+    "href": "posts/2023-10-31-model_diagnostics/index.html#validation-on-different-data-subsets",
+    "title": "Model Diagnostics",
+    "section": "10. Validation on Different Data Subsets:",
+    "text": "10. Validation on Different Data Subsets:\n\nStratified Sampling: Ensure that the model performs well across different strata or subsets of the data."
+  },
+  {
     "objectID": "posts.html",
     "href": "posts.html",
-    "title": "Blogs",
+    "title": "“Blog”",
     "section": "",
-    "text": "No matching items"
+    "text": "This blog is inspired by the concept of out-of-core learning, which refers to the ability to learn from data that cannot fit into a computer’s memory (RAM) at once. While building indexes, which is similar to creating shortcuts or directories for quick access to information, the computer can access specific pieces of information.\nComparing this concept to human learning, where the brain is considered the RAM, I’d like to be better at how to ask good questions on interesting topics. These questions will essentially be queries to the Large Language Models such as OpenAI’s GPT 4.0, and I’ll use them as my mental indexes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Curves: Experenice vs Performance\n\n\n\nR\n\n\nML\n\n\nLearning Curves\n\n\nModel Diagnostics\n\n\n\nThis post discuss how to use learning curves as a model diagnostic tool\n\n\n\nNet Zhang\n\n\nOct 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel Diagnostics\n\n\n\nR\n\n\nML\n\n\nModel Diagnostics\n\n\n\nYou built a model. Now what?\n\n\n\nNet Zhang\n\n\nOct 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resume.html",
