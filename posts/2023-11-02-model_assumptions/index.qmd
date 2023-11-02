@@ -1,0 +1,74 @@
+---
+title: "Violations of Linear Regression Assumptions"
+description: "This post discusses how to validate linear model assumptions, the implication of the violation, and follow-up actions."
+author:
+  - name: Net Zhang
+    url: https://netzissou.github.io/blog/
+date: 11-02-2023
+categories: [R, ML, Model Diagnostics] # self-defined categories
+image: cover.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+Let's consider a marketing example where you are trying to predict sales based on different types of advertising budgets (e.g., TV, radio, online). Here's how you can address violations of regression assumptions with this data:
+
+# Linearity
+- **Validation**: Plot residuals vs. fitted values. A non-random pattern suggests non-linearity.
+- **Symptom**: The relationship between advertising budgets and sales is not linear. 
+- **Implication**: If doubling the TV advertising budget does not double the sales, a linear model might not be appropriate. If the relationship between predictors and the response variable is not linear, the predictions can be biased, especially for values outside the range of the observed data.
+- **What to Do**: 
+  - **Transform the Data**: Apply transformations like log, square root, or polynomial transformations.
+  - **Add Polynomial Terms**: Include squared or cubic terms of predictors.
+  - **Use Non-linear Models**: Decision trees, neural networks, or other non-linear models might be more appropriate.
+  
+# Independence
+- **Validation**: Durbin-Watson test (values close to 2 suggest independence). Check if the residuals are independent
+- **Symptom**: Observations are not independent.
+- **Implication**: The sales result from one advertising campaign does not depend on the sales result from another campaign. For example, a successful campaign last month does not necessarily mean this month's campaign will also be successful. If observations are not independent, the predictions might still be unbiased, but the standard errors of the coefficient estimates could be underestimated, leading to overly optimistic significance tests. This can be a serious issue if the goal is inference.
+- **What to Do**: 
+  - **Add Missing Variables**: Include variables that account for the observed patterns.
+  - **Use Time Series Models**: If data is time-dependent, models like ARIMA might be appropriate.
+  - **Adjust for Clusters**: If data is clustered, use models that account for this.
+  
+# Homoscedasticity
+- **Validation**: Look for a constant spread in a plot of residuals vs. fitted values. Use the Breusch-Pagan test, or Goldfeld-Quandt test.
+- **Symptom**: The variance of residuals is not constant across all levels of advertising budgets.
+- **Implication**: Whether you spend a small or large amount on advertising, the variability in sales remains consistent. A higher budget does not lead to more variability in sales predictions. If the variance of the errors is not constant, the model might give too much weight to some observations, leading to inefficient estimates. Predictions might still be accurate on average, but the uncertainty around the predictions could be misestimated.
+- **What to Do**: 
+  - **Transform the Data**: Log or square root transformations of the response variable.
+  - **Use Weighted Regression**: Assign different weights to observations.
+  
+# Normality of Errors
+- **Validation**: QQ-plot should show residuals following a straight line. Shapiro-Wilk test can be used for formal testing.
+- **Symptom**: Residuals are not normally distributed.
+- **Implication**: If residuals are skewed, the model might consistently overestimate or underestimate sales for certain budget levels. This assumption is mainly important for hypothesis testing and constructing confidence intervals. If errors are not normally distributed, predictions might still be unbiased, but tests and intervals could be inaccurate.
+- **What to Do**: 
+  - **Transform the Data**: Applying a transformation might help.
+  - **Increase Sample Size**: Larger samples tend to have more normally distributed means.
+
+
+# Summary
+
+For Prediction: If the primary goal is prediction, slight violations of assumptions might not be as critical, especially if the model’s predictive performance is validated using external datasets or cross-validation. However, major violations should still be addressed to ensure reliable predictions.
+
+For Inference: If the goal is to understand the relationship between variables or make policy decisions, it’s crucial that the model meets the assumptions. Violations can lead to biased or incorrect conclusions.
+
+In a business setting of predicting sales from advertising budget using a linear regression model, the data should ideally exhibit a straight-line relationship (Linearity), the sales outcomes should be independent of each other (Independence), the variance in sales should be consistent across all budget levels (Homoscedasticity), and the deviations from the predicted sales should follow a normal distribution (Normality of Errors).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

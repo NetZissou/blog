@@ -5,9 +5,8 @@ listing:
   type: grid # or `default` or `table`; each type has its own set of yaml options to include
   sort: "date desc" # can also sort on more than one field
   categories: true # allows you to sort posts by assigned categories 
-
 ---
 
-This blog is inspired by the concept of out-of-core learning, which refers to the ability to learn from data that **cannot fit into a computer's memory (RAM) at once**. While **building indexes**, which is similar to creating shortcuts or directories for quick access to information, the computer can access specific pieces of information. 
+This blog is inspired by the concept of out-of-core learning, which refers to the ability to learn from data that **cannot fit into a computer's memory (RAM) at once**. While **building indexes**, which is similar to creating shortcuts or directories for quick access to information, the computer can access specific pieces of information.
 
 Comparing this concept to human learning, where the brain is considered the RAM, I'd like to be better at how to **ask good questions** on interesting topics. These questions will essentially be queries to the Large Language Models such as OpenAI's GPT 4.0, and I'll use them as my mental indexes.
