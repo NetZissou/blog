@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2024-06-12-Bayesian_Binomial_Disease_Rate/index.html",
       "/posts/2023-11-02-model_assumptions/index.html",
       "/posts/2023-10-31-learning_curves/index.html",
       "/posts/2023-10-31-model_diagnostics/index.html"
