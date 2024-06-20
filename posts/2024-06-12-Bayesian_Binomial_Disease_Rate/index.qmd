@@ -1,11 +1,11 @@
 ---
 title: "Bayesian Inference Case Study: Disease Prevalence"
-description: "tbd"
+description: "Model Binomial data. Coin-toss never stops!"
 author:
   - name: Net Zhang
     url: https://netzissou.github.io/blog/
 date: 06-12-2024
-categories: [Bayesian] # self-defined categories
+categories: [Bayesian, Binomial Data] # self-defined categories
 image: cover.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
