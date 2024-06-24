@@ -8,7 +8,30 @@ date: 06-12-2024
 categories: [Bayesian, Binomial Data] # self-defined categories
 image: cover.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+format: html
+filters:
+  - shinylive
 ---
+# Testing Shinylive
+```{shinylive-python}
+#| standalone: true
+
+from shiny import *
+
+app_ui = ui.page_fluid(
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+app = App(app_ui, server)
+
+```
 
 # Intro
 
